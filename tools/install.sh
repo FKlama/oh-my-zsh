@@ -58,7 +58,7 @@ main() {
     exit 1
   }
   env git -C ${ZSH} fetch
-  env git -C ${ZSG} checkout -b custom origin/custom
+  env git -C ${ZSH} checkout -b custom origin/custom
 
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
