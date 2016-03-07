@@ -22,7 +22,11 @@ function title {
       print -Pn "\e]1;$1:q\a" # set tab name
       ;;
     screen*)
-      print -Pn "\ek$1:q\e\\" # set screen hardstatus
+      if [[ $UID == 0 || $EUID == 0 ]]; then
+        print -Pn "\ek# $1:q\e\\" # set screen hardstatus
+      else
+        print -Pn "\ek$1:q\e\\" # set screen hardstatus
+      fi
       ;;
     *)
       if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
