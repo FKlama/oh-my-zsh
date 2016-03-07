@@ -82,5 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PS1="${PS1}%# "
+
 source $ZSH/custom/startup.zsh
 
