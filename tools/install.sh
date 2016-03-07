@@ -57,7 +57,8 @@ main() {
     printf "Error: git clone of oh-my-zsh repo failed\n"
     exit 1
   }
-  env git -C checkout custom
+  env git -C ${ZSH} fetch
+  env git -C ${ZSG} checkout -b custom origin/custom
 
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
